@@ -1,37 +1,79 @@
-<main>
+<!DOCTYPE html>
+<html lang="en">
 
-    <div>
-        Portfolio w budowie, zapraszam na <a href="https://www.linkedin.com/in/paweljanusz">Linkedin</a>
-    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twoje Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="script.js"></script>
 
-</main>
+</head>
 
-<style>
-    body {
-        background: white;
-        font-size: 80%;
-        padding: 20px;
-    }
+<body>
 
-    main {
-        position: relative;
-        background: white;
-        height: 200px;
-        width: 60%;
-        margin: 0 auto;
-        padding: 20px;
-    }
+    <nav id="navbar">
+        <span id="nav-title" class="hidden" data-translate="portfolioTitle">Your Portfolio</span>
+        <button id="lang-en">EN</button>
+        <button id="lang-pl">PL</button>
+        <button id="theme-toggle" data-translate="darkMode">Dark Mode</button>
+    </nav>
+    <header>
+        <div class="header-content">
+            <img src="Profilowe.jpeg" alt="Your Name" class="header-image">
+            <div>
+                <h1 data-translate="portfolioTitle">Your Portfolio</h1>
+                <p data-translate="name">Your Name</p>
+                <p data-translate="position">Your Position</p>
+            </div>
+        </div>
+    </header>
 
-    main div {
-        background: #ddd;
-        color: black;
-        width: 50%;
-        transform: translate(-50%, -50%);
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        padding: 20px;
+    <main>
+        <section id="projects">
+            <h2 data-translate="projects">Projekty</h2>
+            <div class="project-list">
+                <div class="project-card" data-project-id="projekt1">
+                    <img src="mapa.jpeg" alt="Projekt 1">
+                    <h3 data-translate="project-name1">Nazwa Projektu 1</h3>
+                    <p data-translate="project-desc1">Krótki opis projektu 1</p>
+                </div>
 
-        overflow: auto;
-    }
-</style>
+            </div>
+        </section>
+
+        <section id="hobby-projects">
+            <h2 data-translate="hobby-projects">Projekty w wolnym czasie</h2>
+            <div class="project-list">
+                <div class="project-card" data-project-id="projekt1">
+                    <img src="mapa.jpeg" alt="Projekt 1">
+                    <h3 data-translate="project-name1">Nazwa Projektu 1</h3>
+                    <p data-translate="project-desc1">Krótki opis projektu 1</p>
+                </div>
+                <div class="project-card" data-project-id="projekt1">
+                    <img src="mapa.jpeg" alt="Projekt 1">
+                    <h3 data-translate="project-name1">Nazwa Projektu 1</h3>
+                    <p data-translate="project-desc1">Krótki opis projektu 1</p>
+                </div>
+                <div class="project-card" data-project-id="projekt1">
+                    <img src="mapa.jpeg" alt="Projekt 1">
+                    <h3 data-translate="project-name1">Nazwa Projektu 1</h3>
+                    <p data-translate="project-desc1">Krótki opis projektu 1</p>
+                </div>
+                <div class="project-card" data-project-id="projekt1">
+                    <img src="mapa.jpeg" alt="Projekt 1">
+                    <h3 data-translate="project-name1">Nazwa Projektu 1</h3>
+                    <p data-translate="project-desc1">Krótki opis projektu 1</p>
+                </div>
+                <!-- Podobnie jak wyżej, karty dla projektów hobbystycznych -->
+            </div>
+        </section>
+    </main>
+
+
+    <footer>
+        <p>© 2024 Twoje Imię</p>
+    </footer>
+</body>
+
+</html>

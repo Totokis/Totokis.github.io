@@ -1,0 +1,58 @@
+@import url('http://fonts.googleapis.com/css?family=Roboto');
+
+:root {
+    --white-color: #fff;
+    --dark-color: #333;
+    --accent-color: #DB3421;
+    --second-accent-color: #21DB7A;
+
+    --primary-color: var(--dark-color);
+    --background-color: var(--white-color);
+    --background-header-color: var(--white-color);
+    --header-font: 'Roboto', sans-serif;
+    --body-font: 'Roboto', sans-serif;
+    --link-color: var(--accent-color);
+    --link-hover-color: var(--second-accent-color);
+}
+
+.dark-mode {
+    --primary-color: var(--white-color);
+    --background-color: var(--dark-color);
+    --background-header-color: var(--dark-color);
+    --link-color: var(--accent-color);
+    --link-hover-color: var(--second-accent-color);
+}
+
+body {
+    color: var(--primary-color);
+    background-color: var(--background-color);
+    font-family: var(--body-font);
+}
+
+header {
+    background-color: var(--background-header-color);
+    padding: 10px;
+    text-align: center;
+}
+
+
+header {
+    background: #f4f4f4;
+    padding: 20px 0;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+.project-introduction img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #f4f4f4;
+}

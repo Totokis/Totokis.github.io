@@ -6,44 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Twoje Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
+
+
+
+    <script src="https://kit.fontawesome.com/6f3ec04ccb.js" crossorigin="anonymous"></script>
+
     <script type="module" src="script.js"></script>
+
 
 </head>
 
 <body>
 
     <nav id="navbar">
-        <span id="nav-title" class="hidden" data-translate="portfolioTitle">Your Portfolio</span>
-        <button id="lang-en">EN</button>
-        <button id="lang-pl">PL</button>
-        <button id="theme-toggle" data-translate="darkMode">Dark Mode</button>
+        <span id="nav-title" class="hidden"><text class="name">Paweł</text> <text class="lastName">Janusz</text>
+            Portfolio</span>
+        <button class="langButton" id="lang-en">ENG <i class="fa-solid fa-language fa-lg"></i></button>
+        <button class="langButton" id="lang-pl">PL <i class="fa-solid fa-language fa-lg"></i></button>
+        <button id="theme-toggle"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></button>
     </nav>
     <header>
         <div class="header-content">
             <img src="Profilowe.jpeg" alt="Your Name" class="header-image">
             <div>
-                <h1 data-translate="portfolioTitle">Your Portfolio</h1>
-                <p data-translate="name">Your Name</p>
-                <p data-translate="position">Your Position</p>
+                <h1 class="h1Name">
+                    <text class="name">Paweł</text> <text class="lastName">Janusz</text>
+                </h1>
+                <div class="positions">
+                    <text class="position" data-translate="position1">Your Position</text>
+                    <text class="position">&middot</text>
+                    <text class="position" data-translate="position2">Your Position</text>
+                </div>
+
             </div>
         </div>
     </header>
 
     <main>
         <section id="projects">
-            <h2 data-translate="projects">Projekty</h2>
+            <h2 class="divider" data-translate="projects">Projekty</h2>
+
             <div class="project-list">
                 <div class="project-card" data-project-id="projekt1">
                     <img src="mapa.jpeg" alt="Projekt 1">
                     <h3 data-translate="project-name1">Nazwa Projektu 1</h3>
                     <p data-translate="project-desc1">Krótki opis projektu 1</p>
+
                 </div>
 
+                <a href="projekt1.html" data-project-id="projekt1" class="project-card">
+                    <img src="mapa.jpeg" alt="Projekt 1">
+                    <h3 data-translate="project-name1">Nazwa Projektu 1</h3>
+                    <p data-translate="project-desc1">Krótki opis projektu 1</p>
+                </a>
             </div>
         </section>
 
         <section id="hobby-projects">
-            <h2 data-translate="hobby-projects">Projekty w wolnym czasie</h2>
+            <h2 class="divider" data-translate="hobby-projects">Projekty w wolnym czasie</h2>
             <div class="project-list">
                 <div class="project-card" data-project-id="projekt1">
                     <img src="mapa.jpeg" alt="Projekt 1">
@@ -67,6 +87,18 @@
                 </div>
                 <!-- Podobnie jak wyżej, karty dla projektów hobbystycznych -->
             </div>
+        </section>
+
+        <section id="about-me">
+            <h2 class="divider" data-translate="about-me">
+                O mnie
+            </h2>
+        </section>
+
+        <section id="contact">
+            <h2 class="divider" data-translate="contact">
+                Kontakt
+            </h2>
         </section>
     </main>
 

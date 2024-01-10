@@ -1,4 +1,4 @@
-@import url('http://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap');
 
 :root {
     --white-color: #fff;
@@ -35,6 +35,26 @@ header {
     text-align: center;
 }
 
+.name {
+    font-weight: 100;
+}
+
+.lastName {
+    font-weight: 500;
+}
+
+.positons {
+    display: flex;
+    flex-direction: row;
+}
+
+text.position {
+    font-weight: 400;
+    font-variant: small-caps;
+    color: var(--accent-color)
+}
+
+
 h1,
 h2,
 h3,
@@ -53,6 +73,8 @@ a:hover {
     color: var(--link-hover-color);
 }
 
+
+
 button {
     background-color: var(--accent-color);
     color: var(--white-color);
@@ -70,9 +92,11 @@ button:hover {
     background-color: #555;
 }
 
+
+
 #navbar {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
     position: sticky;
     top: 0;
@@ -83,16 +107,30 @@ button:hover {
 }
 
 #navbar button {
-    background-color: var(--accent-color);
-    color: var(--white-color);
-    border: none;
+    background-color: var(--background-color);
+    color: var(--accent-color);
     padding: 10px 15px;
     cursor: pointer;
 }
 
 #navbar button:hover {
-    background-color: #555;
+    color: var(--primary-color)
 }
+
+#navbar button.langButton {
+    background-color: var(--background-color);
+    color: var(--accent-color);
+}
+
+#navbar button.langButton:hover {
+    color: var(--primary-color)
+}
+
+#navbar span {
+    padding: 10px 15px;
+    flex-grow: 2;
+}
+
 
 .hidden {
     display: none;
@@ -110,6 +148,8 @@ button:hover {
     /* lub inny wymiar */
     height: 100px;
     border-radius: 50%;
+    border-style: solid;
+    border-width: thin;
     object-fit: cover;
 }
 
@@ -118,10 +158,23 @@ button:hover {
 section {
     margin: 20px;
     padding: 15px;
-    border: 1px solid #ddd;
-    /* Delikatna obramówka */
-    border-radius: 8px;
-    /* Zaokrąglone rogi */
+}
+
+.divider {
+    display: flex;
+    align-items: end;
+    font-weight: 500;
+    font-variant: small-caps;
+}
+
+
+.divider::before,
+.divider::after {
+    flex: 1;
+    content: '';
+    padding: 1px;
+    background-color: var(--primary-color);
+    margin: 5px;
 }
 
 #projects {
@@ -156,10 +209,29 @@ section h2 {
     text-align: center;
 }
 
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    /* Opcjonalnie, aby pokazać, że karta jest interaktywna */
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    /* Nieco powiększa kartę */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Dodaje cień dla efektu "podniesienia" karty */
+    color: var(--accent-color);
+}
+
+
 .project-card img {
     width: 100%;
     height: 150px;
     object-fit: cover;
+}
+
+a.project-card {
+    color: var(--primary-color)
 }
 
 .project-card h3,
@@ -167,22 +239,84 @@ section h2 {
     margin: 10px;
 }
 
-.project-details {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.9);
-    z-index: 1000;
-    padding: 20px;
-    box-sizing: border-box;
-    display: none;
-}
-
-.project-details img {
+.project-introduction img {
     max-width: 100%;
     height: auto;
 }
 
-/* Styl dla przycisku zamknięcia */
+.close-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-decoration: none;
+    font-size: 24px;
+    color: #333;
+    padding: 5px 10px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: #666;
+}
+
+.carousel {
+    position: relative;
+}
+
+.carousel-slides {
+    display: flex;
+    overflow: hidden;
+}
+
+.carousel-slides video {
+    max-width: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slides img {
+    max-width: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 2;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+.carousel-indicators {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.carousel-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.carousel-indicator.active {
+    background-color: #333;
+}

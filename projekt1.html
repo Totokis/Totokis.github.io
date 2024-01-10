@@ -24,64 +24,75 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/6f3ec04ccb.js" crossorigin="anonymous"></script>
+
+    <script type="module" src="project-script.js"></script>
     <!-- Dodaj tu inne potrzebne zależności -->
 </head>
 
 <body>
-    <header>
-        <a href="index.html" class="close-button">X</a>
-        <h1>Nazwa Projektu X</h1>
-        <!-- Reszta nagłówka -->
-    </header>
-    <main>
-        <div class="owl-carousel owl-theme">
+    <div class="project-container">
+        <header>
+            <a href="index.html" class="close-button"><i class="fa-solid fa-xmark"></i></a>
+            <h1 class="projectName">MarineVerse Cup</h1>
+            <!-- Reszta nagłówka -->
+        </header>
+        <main>
+            <div class="owl-carousel owl-theme">
 
-            <img src="mapa.jpeg" class="item">
-            <img src="mapa.jpeg" class="item">
-            <img src="mapa.jpeg" class="item">
-            <img src="mapa.jpeg" class="item">
-            <img src="mapa.jpeg" class="item">
-            <img src="mapa.jpeg" class="item">
-            <img src="mapa.jpeg" class="item">
-            <img src="mapa.jpeg" class="item">
-        </div>
-        <p>Krótki opis Projektu X...</p>
+                <img src="marineverse.jpeg" class="item">
 
 
-        <section class="project-details">
-            <h2>Szczegółowe Informacje o Projekcie</h2>
-            <p>Długi opis Projektu X, co projekt dał, jego cele, proces tworzenia, itp.</p>
-            <!-- Tutaj możesz dodać więcej treści, jak listy, galerie, filmy, itd. -->
-        </section>
+            </div>
 
-        <!-- Dodatkowe sekcje według potrzeb -->
-    </main>
+            <section class="project-details">
+                <h2 class="divider" data-translate="project-details">Szczegółowe Informacje o Projekcie</h2>
+                <p data-translate="project-details-content">Długi opis Projektu X, co projekt dał, jego cele, proces
+                    tworzenia, itp.</p>
+                <!-- Tutaj możesz dodać więcej treści, jak listy, galerie, filmy, itd. -->
+            </section>
 
-    <footer>
+            <section class="report">
+                <h2 class="divider" data-translate="report-divider">Podsumowanie</h2>
+                <p data-translate="report">Długi opis Projektu X, co projekt dał, jego cele, proces tworzenia, itp.</p>
+                <!-- Tutaj możesz dodać więcej treści, jak listy, galerie, filmy, itd. -->
+            </section>
 
-        <p>© 2024 Twoje Imię</p>
-        <!-- Informacje kontaktowe, linki do mediów społecznościowych, itd. -->
-    </footer>
+            <!-- Dodatkowe sekcje według potrzeb -->
+        </main>
 
-    <script>
-        $('.owl-carousel').owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: true,
-            video: true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 3
-                },
-                1000: {
-                    items: 5
+        <footer>
+
+            <p>© 2024 Paweł Janusz</p>
+            <!-- Informacje kontaktowe, linki do mediów społecznościowych, itd. -->
+        </footer>
+
+        <script>
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                video: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 3
+                    },
+                    1000: {
+                        items: 5
+                    }
                 }
-            }
-        })
-    </script>
+            })
+
+
+        </script>
+
+
+
 </body>
+
+</div>
 
 </html>

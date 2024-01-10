@@ -320,3 +320,16 @@ a.project-card {
 .carousel-indicator.active {
     background-color: #333;
 }
+
+.projectName {
+    font-weight: 100;
+}
+
+a.close-button {
+    color: var(--accent-color);
+}
+
+.project-container {
+    margin: 20px;
+    padding: 15px;
+}

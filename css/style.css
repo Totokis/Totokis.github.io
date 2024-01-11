@@ -160,22 +160,6 @@ section {
     padding: 15px;
 }
 
-.divider {
-    display: flex;
-    align-items: end;
-    font-weight: 500;
-    font-variant: small-caps;
-}
-
-
-.divider::before,
-.divider::after {
-    flex: 1;
-    content: '';
-    padding: 1px;
-    background-color: var(--primary-color);
-    margin: 5px;
-}
 
 #projects {
     background-color: var(--background-color)
@@ -227,7 +211,7 @@ section h2 {
 .project-card img {
     width: 100%;
     height: 150px;
-    object-fit: cover;
+    object-fit: cover
 }
 
 a.project-card {
@@ -332,4 +316,23 @@ a.close-button {
 .project-container {
     margin: 20px;
     padding: 15px;
+}
+
+.divider {
+    display: flex;
+    align-items: end;
+    font-weight: 500;
+    font-variant: small-caps;
+}
+
+.divider::after {
+    flex: 1;
+    content: '';
+    padding: 1px;
+    background-color: var(--primary-color);
+    margin: 5px;
+}
+
+#accentColor {
+    color: var(--accent-color)
 }

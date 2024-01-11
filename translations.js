@@ -16,6 +16,11 @@ export const translations = {
         'project-desc1': 'VR Sailing Game',
         'project-details': 'Project details',
         'project-details-content': "Lorem ipsum",
+
+        'project-name2': 'Rigging Drill',
+        'project-desc2': 'Mixed Reality Application',
+        'project-name3': 'MarineVerse Kayaking',
+        'project-desc3': 'VR Kayaking Fitness Game',
         'report-divider': 'Report',
 
         // Inne tłumaczenia w języku angielskim
@@ -30,13 +35,19 @@ export const translations = {
         'darkMode': 'Tryb Ciemny',
         'projects': 'Projekty',
         'hobby-projects': 'Projekty w wolnym czasie',
-        'about-me': 'Trochę o mnie',
+        'about-me': 'O mnie',
         'contact': 'Kontakt',
         'about-me-content': 'Jako programista gier VR, połączyłem swoje marzenia z rzeczywistością. Moje doświadczenie w Unity, które rozszerzałem w postaci udziałów w licznych gamejamach, w tym 1. miejscem na HackYeah 2021 czy warszawskim Copernicusie z 2022 roku, zaowocowało wieloma kreatywnymi projektami. Podczas pracy nad grą o żeglarstwie w MarineVerse, zanurzyłem się w jego świat, co było dla mnie nieoczekiwanym, ale pasjonującym odkryciem. W ubiegłym roku ukończyłem kurs żeglarski i zdobyłem patent, co wzbogaciło moje życie o nowe hobby. Teraz nabrawszy wiatru we włosy szukam kolejnych inspiracji i wyzwań, chcę tworzyć projekty które będą równie ciekawe.',
         'project-name1': 'MarineVerse Cup',
         'project-desc1': 'Gra o żeglowaniu w VR',
         'project-details': 'Project details',
         'project-details-content': "Lorem ipsum",
+
+        'project-name2': 'Rigging Drill',
+        'project-desc2': 'Aplikacja wykorzystująca mieszaną rzeczywistość',
+        'project-name3': 'MarineVerse Kayaking',
+        'project-desc3': 'Gra sportowa o pływaniu kajakiem w VR',
+
         'report-divider': 'Podsumowanie',
         // Inne tłumaczenia w języku polskim
     }

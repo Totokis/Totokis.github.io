@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nazwa Projektu X</title>
+    <title>MarineVerse Cup</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -40,21 +40,49 @@
         <main>
             <div class="owl-carousel owl-theme">
 
-                <img src="marineverse.jpeg" class="item">
-
-
+                <img src="project1/project1_2.jpeg" class="item">
+                <img src="project1/project1_1.jpeg" class="item">
+                <img src="project1/project1_3.jpeg" class="item">
+                <img src="project1/project1_5.jpeg" class="item">
             </div>
 
+
             <section class="project-details">
-                <h2 class="divider" data-translate="project-details">Szczegółowe Informacje o Projekcie</h2>
-                <p data-translate="project-details-content">Długi opis Projektu X, co projekt dał, jego cele, proces
-                    tworzenia, itp.</p>
+                <h2 class="divider">Informacje o Projekcie</h2>
+                <p><strong><i class="fa-solid fa-sailboat" id="accentColor"></i> Nazwa projektu:</strong> MarineVerse
+                    Cup</p>
+                <p><strong><i class="fa-solid fa-sailboat" id="accentColor"></i> Opis:</strong> Gra o żeglowaniu w VR,
+                    stawiająca na
+                    realizm i naukę</p>
+                <p><strong><i class="fa-solid fa-sailboat" id="accentColor"></i> Użyte technologie:</strong> Unity,
+                    Oculus SDK, Blender
+                    3D, PhysX, Steam SDK</p>
+                <p><strong><i class="fa-solid fa-sailboat" id="accentColor"></i> Cel projektu:</strong> Projekt
+                    komercyjny</p>
+                <p><strong><i class="fa-solid fa-sailboat" id="accentColor"></i> Moja rola:</strong> Byłem programistą
+                    oraz projektantem
+                    gameplayu. Ze względu na mały team,
+                    zajmowałem się programowaniem wszystkiego przez UI, gameplay, shadery po SI, okazjonalnie wspierałem
+                    projekt jako grafik 3D oraz 2D. W zasadzie tylko nie komponowałem muzyki. </p>
                 <!-- Tutaj możesz dodać więcej treści, jak listy, galerie, filmy, itd. -->
             </section>
 
+
             <section class="report">
-                <h2 class="divider" data-translate="report-divider">Podsumowanie</h2>
-                <p data-translate="report">Długi opis Projektu X, co projekt dał, jego cele, proces tworzenia, itp.</p>
+                <h2 class="divider">Podsumowanie</h2>
+                <p><strong><i class="fa-solid fa-anchor" id="accentColor"></i> Wyzwania:</strong> Optymalizacja pracy
+                    aby wyrobić się z planowanymi funkcjami. Utrzymanie stabilnej liczby klatek na sekundę dla platform
+                    Oculus Quest 2 i 3. Praca z zespołem w innej strefie czasowej, sprawiała że przez większą część dnia
+                    pracowałem samodzielnie.</p>
+                <p><strong><i class="fa-solid fa-anchor" id="accentColor"></i> Nauka:</strong> Projekt ten nauczył mnie
+                    lepszego zarządzania czasem, oraz lepszego szacowania czasu potrzebnego na zadanie. Rozwinąłem
+                    wszechstronnie swoje zdolności programistyczne, musiały sprostać różnym typom zadań. Dowiedziałem
+                    się wiele na temat procesu wydawania gry na platformę Quest, wiem jak przejść proces certyfikacji.
+                </p>
+                <p><strong><i class="fa-solid fa-anchor" id="accentColor"></i> Ocena projektu:</strong> Był to mój
+                    pierwszy komercyjny projekt w branży gier. Dowiedziałem się jak to jest zarabiać na życie robiąc
+                    gry. Bardzo lubiłem pracę nad żeglowaniem w VR, jednak brakowało mi kontaktu z zespołem, który z
+                    przyczyn odległości, nie zawsze mógl służyć pomocą.</p>
                 <!-- Tutaj możesz dodać więcej treści, jak listy, galerie, filmy, itd. -->
             </section>
 
@@ -71,8 +99,14 @@
             $('.owl-carousel').owlCarousel({
                 loop: true,
                 margin: 10,
-                nav: true,
+                nav: false,
                 video: true,
+                dotsEach: true,
+                center: true,
+                stagePadding: 50,
+                autoHeight: true,
+
+
                 responsive: {
                     0: {
                         items: 1

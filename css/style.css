@@ -242,7 +242,7 @@ a.project-card {
 }
 
 .close-button:hover {
-    color: #666;
+    color: var(--primary-color)
 }
 
 .carousel {
@@ -335,4 +335,12 @@ a.close-button {
 
 #accentColor {
     color: var(--accent-color)
+}
+
+a.normal {
+    color: var(--accent-color);
+}
+
+a.normal:hover {
+    color: var(--primary-color)
 }

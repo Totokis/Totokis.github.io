@@ -432,7 +432,10 @@
 
                 if (distance < 0) {
                     clearInterval(countdownFunction);
-                    document.getElementById("countdown").innerHTML = "<div class='text-center w-full font-display text-2xl text-accent'>Ten dzień nadszedł!</div>";
+                    document.getElementById("countdown").innerHTML = `
+            <div class='text-center w-full'>
+                <img src="soitbegins.jpg" alt="Celebration Image" class="mx-auto">
+            </div>`;
                     return;
                 }
 

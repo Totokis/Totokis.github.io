@@ -17,10 +17,18 @@
     <!-- Visualization & Content Choices: 1. Countdown (Hero): Inform/Engage -> JS Timer -> Dynamic & exciting. 2. Locations (Nasz Dzień): Inform -> Styled Cards (HTML/Tailwind) -> Clear visual separation. 3. Schedule (Harmonogram): Organize/Change -> Vertical Timeline (HTML/CSS) -> Visually represents the flow of the day, more thematic than a chart. 4. Practical Info: Organize/Inform -> Clickable Cards (HTML/JS) -> Keeps the UI clean, user pulls information as needed. All icons are Unicode to avoid external dependencies. -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
+        :root {
+            --color-background: #ddb1ca;
+            --color-titles: #4e5e52;
+            --color-accent: #4e5e52;
+            --color-text: #121313;
+            --color-white: #FFFFFF;
+        }
+
         body {
-            background-color: #FDFBF7;
+            background-color: var(--color-background);
             font-family: 'Lato', sans-serif;
-            color: #594F44;
+            color: var(--color-text);
         }
 
         h1,
@@ -30,12 +38,14 @@
             font-family: 'Cormorant Garamond', serif;
         }
 
+
+
         .bg-primary {
-            background-color: #FDFBF7;
+            background-color: var(--color-background);
         }
 
         .bg-secondary {
-            background-color: #EAE0D5;
+            background-color: var(--color-background);
         }
 
         .text-accent {

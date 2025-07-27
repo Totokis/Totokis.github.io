@@ -4,76 +4,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zaproszenie na Ślub i Wesele</title>
+    <title>Zaproszenie na Ślub i Wesele - Julianna & Paweł</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Cinzel:wght@400;700&display=swap"
         rel="stylesheet">
-    <!-- Chosen Palette: Warm Harmony -->
-    <!-- Application Structure Plan: A single-page application with a fixed top navigation bar for smooth scrolling to dedicated sections. The structure is designed for intuitive access to information: 1. Hero section with a countdown for emotional impact. 2. "Nasz Dzień" section with key locations. 3. Interactive "Harmonogram" (schedule) using a chart for visual clarity. 4. "Informacje Praktyczne" section with clickable cards to avoid clutter. This thematic structure is more user-friendly than a linear document, allowing guests to quickly find what they need. -->
-    <!-- Visualization & Content Choices: 1. Countdown (Hero): Inform/Engage -> JS Timer -> Dynamic & exciting. 2. Locations (Nasz Dzień): Inform -> Styled Cards (HTML/Tailwind) -> Clear visual separation. 3. Schedule (Harmonogram): Organize/Change -> Vertical Timeline (HTML/CSS) -> Visually represents the flow of the day, more thematic than a chart. 4. Practical Info: Organize/Inform -> Clickable Cards (HTML/JS) -> Keeps the UI clean, user pulls information as needed. All icons are Unicode to avoid external dependencies. -->
+    <!-- Chosen Palette: Elven Green & White -->
+    <!-- Application Structure Plan: The structure remains a user-friendly single page. The visual identity is completely overhauled to match the "Lord of the Rings" theme requested by the user, inspired by their physical invitation. This includes a new color palette (white & sage green), new typography (Cinzel for headers, Cormorant Garamond for body), and thematic icons and wording. The goal is to create an elegant, fantasy-inspired atmosphere. -->
+    <!-- Visualization & Content Choices: 1. Hero Section: The previous image is replaced with a more thematic layout using new fonts and a subtle quote. 2. Icons: All emojis are replaced with elegant Unicode symbols (e.g., ❖, 🌿) that fit the fantasy theme. 3. Timeline: The structure is kept, but restyled with the new color scheme to look more like a chapter in a story. 4. Wording: Headers and some text snippets are slightly altered to enhance the epic, celebratory feel ("Nasza Wspólna Podróż", "Przebieg Uroczystości"). -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
-        :root {
-            --color-background: #ddb1ca;
-            --color-titles: #4e5e52;
-            --color-accent: #A88B6A;
-            --color-text: #594F44;
-            --color-white: #FFFFFF;
-        }
-
         body {
-            background-color: var(--color-background);
-            font-family: 'Lato', sans-serif;
-            color: #594F44;
+            background-color: #F8F9F5;
+            /* Off-white background */
+            font-family: 'Cormorant Garamond', serif;
+            color: #3D4C41;
+            /* Darker green for text */
         }
 
         h1,
         h2,
         h3,
-        .font-serif {
-            font-family: 'Cormorant Garamond', serif;
+        .font-display {
+            font-family: 'Cinzel', serif;
         }
 
-
-
         .bg-primary {
-            background-color: #FDFBF7;
+            background-color: #F8F9F5;
         }
 
         .bg-secondary {
-            background-color: #EAE0D5;
+            background-color: #EAEFE6;
         }
 
+        .bg-secondary-main {
+            background-color: #EAEFE6;
+            /*Background image */
+            background-image: url("para_mloda.png");
+            background-size: contain;
+            background-position: left;
+            background-repeat: no-repeat;
+            background-blend-mode: overlay;
+        }
+
+        /* Light green-gray */
         .text-accent {
-            color: #A88B6A;
+            color: #54725B;
         }
 
+        /* Main green from user */
         .border-accent {
-            border-color: #A88B6A;
+            border-color: #54725B;
         }
 
         .bg-accent {
-            background-color: #A88B6A;
+            background-color: #54725B;
         }
 
         .nav-link {
+            font-family: 'Cinzel', serif;
             transition: color 0.3s, border-bottom-color 0.3s;
             border-bottom: 2px solid transparent;
+            color: #54725B;
         }
 
         .nav-link:hover,
         .nav-link.active {
-            color: #A88B6A;
-            border-bottom-color: #A88B6A;
+            color: #3D4C41;
+            border-bottom-color: #54725B;
         }
 
         .card {
             background-color: #FFFFFF;
-            border: 1px solid #EAE0D5;
+            border: 1px solid #EAEFE6;
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
@@ -88,8 +93,8 @@
             width: 12px;
             height: 12px;
             right: -6px;
-            background-color: #FDFBF7;
-            border: 2px solid #A88B6A;
+            background-color: #F8F9F5;
+            border: 2px solid #54725B;
             top: 50%;
             transform: translateY(-50%);
             border-radius: 50%;
@@ -108,23 +113,23 @@
     </style>
 </head>
 
-<body>
+<body class="bg-primary">
 
     <header id="navbar"
         class="bg-primary/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 shadow-sm transition-all duration-300">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <div class="font-serif text-xl text-accent">
+                <div class="font-display text-xl text-accent">
                     P & J
                 </div>
                 <nav class="hidden md:flex items-center space-x-8">
                     <a href="#home" class="nav-link px-2 py-1">Start</a>
-                    <a href="#dzien" class="nav-link px-2 py-1">Nasz Dzień</a>
+                    <a href="#dzien" class="nav-link px-2 py-1">Uroczystość</a>
                     <a href="#harmonogram" class="nav-link px-2 py-1">Harmonogram</a>
                     <a href="#info" class="nav-link px-2 py-1">Informacje</a>
                 </nav>
                 <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+                    <button id="mobile-menu-button" class="text-accent focus:outline-none">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -134,45 +139,43 @@
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden">
-            <a href="#home" class="block text-center py-2 px-4 text-sm hover:bg-secondary">Start</a>
-            <a href="#dzien" class="block text-center py-2 px-4 text-sm hover:bg-secondary">Nasz Dzień</a>
-            <a href="#harmonogram" class="block text-center py-2 px-4 text-sm hover:bg-secondary">Harmonogram</a>
-            <a href="#info" class="block text-center py-2 px-4 text-sm hover:bg-secondary">Informacje</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-primary/95">
+            <a href="#home"
+                class="block text-center py-2 px-4 text-sm hover:bg-secondary font-display text-accent">Start</a>
+            <a href="#dzien"
+                class="block text-center py-2 px-4 text-sm hover:bg-secondary font-display text-accent">Uroczystość</a>
+            <a href="#harmonogram"
+                class="block text-center py-2 px-4 text-sm hover:bg-secondary font-display text-accent">Harmonogram</a>
+            <a href="#info"
+                class="block text-center py-2 px-4 text-sm hover:bg-secondary font-display text-accent">Informacje</a>
         </div>
     </header>
 
     <main>
-        <section id="home" class="min-h-screen w-full flex items-center justify-center bg-secondary py-16 px-4">
+        <section id="home"
+            class="min-h-screen w-full flex flex-col items-center justify-center bg-secondary-main py-16 px-4 text-center">
             <div class="container mx-auto">
-                <div class="grid md:grid-cols-2 items-center gap-8 md:gap-16 text-center md:text-left">
-                    <div class="md:order-2 flex justify-center">
-                        <img src="para_mloda.png" alt="Szkic ślubny Julianny i Pawła"
-                            class="max-w-xs w-full h-auto rounded-lg shadow-xl p-2">
+                <p class="font-serif text-lg text-accent">Jeden, by wszystkimi rządzić... A tak właściwie to dwa.</p>
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-display text-accent leading-tight mt-4">Julianna &
+                    Paweł</h1>
+                <p class="mt-6 text-2xl md:text-3xl font-display text-gray-600">Pobieramy się!</p>
+                <p class="mt-2 text-xl font-serif">27 Września 2025</p>
+                <div id="countdown" class="mt-8 flex space-x-4 md:space-x-8 justify-center">
+                    <div>
+                        <span id="days" class="block text-4xl md:text-6xl font-display text-accent">0</span>
+                        <span class="block text-xs md:text-sm font-serif tracking-widest">DNI</span>
                     </div>
-                    <div class="md:order-1">
-                        <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif text-accent leading-tight">Pobieramy się!
-                        </h1>
-                        <p class="mt-4 text-lg md:text-xl font-light">Julianna & Paweł</p>
-                        <p class="mt-2 text-2xl md:text-3xl font-serif">27 września 2025</p>
-                        <div id="countdown" class="mt-8 flex space-x-4 md:space-x-8 justify-center md:justify-start">
-                            <div>
-                                <span id="days" class="block text-4xl md:text-6xl font-serif text-accent">0</span>
-                                <span class="block text-xs md:text-sm font-light tracking-widest">DNI</span>
-                            </div>
-                            <div>
-                                <span id="hours" class="block text-4xl md:text-6xl font-serif text-accent">0</span>
-                                <span class="block text-xs md:text-sm font-light tracking-widest">GODZIN</span>
-                            </div>
-                            <div>
-                                <span id="minutes" class="block text-4xl md:text-6xl font-serif text-accent">0</span>
-                                <span class="block text-xs md:text-sm font-light tracking-widest">MINUT</span>
-                            </div>
-                            <div>
-                                <span id="seconds" class="block text-4xl md:text-6xl font-serif text-accent">0</span>
-                                <span class="block text-xs md:text-sm font-light tracking-widest">SEKUND</span>
-                            </div>
-                        </div>
+                    <div>
+                        <span id="hours" class="block text-4xl md:text-6xl font-display text-accent">0</span>
+                        <span class="block text-xs md:text-sm font-serif tracking-widest">GODZIN</span>
+                    </div>
+                    <div>
+                        <span id="minutes" class="block text-4xl md:text-6xl font-display text-accent">0</span>
+                        <span class="block text-xs md:text-sm font-serif tracking-widest">MINUT</span>
+                    </div>
+                    <div>
+                        <span id="seconds" class="block text-4xl md:text-6xl font-display text-accent">0</span>
+                        <span class="block text-xs md:text-sm font-serif tracking-widest">SEKUND</span>
                     </div>
                 </div>
             </div>
@@ -181,33 +184,32 @@
         <section id="dzien" class="py-20 md:py-32 bg-primary">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-serif">Nasz Wielki Dzień</h2>
-                    <p class="mt-4 max-w-2xl mx-auto text-lg font-light">Z radością zapraszamy Was do wspólnego
-                        świętowania w dwóch wyjątkowych miejscach. Tutaj znajdziecie wszystkie szczegóły dotyczące
-                        ceremonii zaślubin oraz przyjęcia weselnego.</p>
+                    <h2 class="text-4xl md:text-5xl font-display">Miejsca Uroczystości</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg font-serif">Wasza obecność to dla nas najlepszy prezent. A
+                        tutaj łapcie mapę do miejsc, gdzie będziemy razem celebrować.</p>
                 </div>
                 <div class="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
                     <div class="card p-8 text-center rounded-lg">
-                        <div class="text-5xl mb-4 text-accent">⛪</div>
-                        <h3 class="text-3xl font-serif mb-2">Ceremonia Zaślubin</h3>
-                        <p class="font-semibold">Sobota, 27 września 2025, 13:00</p>
-                        <p class="mt-2">Kościół św. Michała Archanioła</p>
-                        <p class="text-sm font-light">ul. Bolesława Krzywoustego 1, Gliwice</p>
+                        <div class="text-5xl mb-4 text-accent">❖</div>
+                        <h3 class="text-3xl font-display mb-2">Ceremonia Zaślubin</h3>
+                        <p class="font-semibold font-serif">Sobota, 27 września 2025, 13:00</p>
+                        <p class="mt-2 font-serif">Kościół św. Michała Archanioła</p>
+                        <p class="text-sm font-serif">ul. Bolesława Krzywoustego 1, Gliwice</p>
                         <a href="https://www.google.com/maps/place/Ko%C5%9Bci%C3%B3%C5%82+Rzymskokatolicki+pw.+%C5%9Bw.+Micha%C5%82a+Archanio%C5%82a/@50.297431,18.675544,15z/data=!4m6!3m5!1s0x471130541918453b:0x5f0f3b4053f31745!8m2!3d50.297431!4d18.675544!16s%2Fg%2F1tdy16_9?hl=pl-PL&entry=ttu"
                             target="_blank"
-                            class="inline-block mt-4 bg-accent text-white px-6 py-2 rounded-full text-sm hover:bg-opacity-90 transition">Zobacz
-                            na mapie</a>
+                            class="inline-block mt-4 bg-accent text-white px-6 py-2 rounded-full text-sm hover:bg-opacity-90 transition font-display">Wskaż
+                            Drogę</a>
                     </div>
                     <div class="card p-8 text-center rounded-lg">
-                        <div class="text-5xl mb-4 text-accent">🍽️</div>
-                        <h3 class="text-3xl font-serif mb-2">Przyjęcie Weselne</h3>
-                        <p class="font-semibold">14:30 - 05:00</p>
-                        <p class="mt-2">Restauracja Umami</p>
-                        <p class="text-sm font-light">ul. gen. Władysława Sikorskiego 46, Pyskowice</p>
+                        <div class="text-5xl mb-4 text-accent">🌿</div>
+                        <h3 class="text-3xl font-display mb-2">Przyjęcie Weselne</h3>
+                        <p class="font-semibold font-serif">14:30 - 05:00</p>
+                        <p class="mt-2 font-serif">Restauracja Umami</p>
+                        <p class="text-sm font-serif">ul. gen. Władysława Sikorskiego 46, Pyskowice</p>
                         <a href="https://www.google.com/maps/place/Umami/@50.39235,18.62319,15z/data=!4m6!3m5!1s0x4711463132d73315:0x892a7f5a43586221!8m2!3d50.39235!4d18.62319!16s%2Fg%2F11b6dr72b2?hl=pl-PL&entry=ttu"
                             target="_blank"
-                            class="inline-block mt-4 bg-accent text-white px-6 py-2 rounded-full text-sm hover:bg-opacity-90 transition">Zobacz
-                            na mapie</a>
+                            class="inline-block mt-4 bg-accent text-white px-6 py-2 rounded-full text-sm hover:bg-opacity-90 transition font-display">Wskaż
+                            Drogę</a>
                     </div>
                 </div>
             </div>
@@ -216,11 +218,11 @@
         <section id="harmonogram" class="py-20 md:py-32 bg-secondary">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-serif">Harmonogram Dnia</h2>
-                    <div class="text-6xl my-8 animate-pulse">🕺</div>
-                    <p class="mt-4 max-w-2xl mx-auto text-lg font-light">Stawiamy na taniec i świetną zabawę! Abyście
-                        mogli w pełni cieszyć się każdą chwilą, przygotowaliśmy plan naszego dnia w formie osi czasu. To
-                        nasza mapa do wspólnego, niezapomnianego świętowania.</p>
+                    <h2 class="text-4xl md:text-5xl font-display text-accent">Przebieg Uroczystości</h2>
+                    <div class="text-6xl my-8 animate-pulse text-accent">💍</div>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg font-serif">Przed Wami rozkład jazdy naszej imprezy!
+                        Chcemy, żebyście bawili się na maksa, więc łapcie mały przewodnik po tym, co dla Was
+                        zaplanowaliśmy :P Gotowi? Bo my bardzo!</p>
                 </div>
 
                 <div class="relative max-w-4xl mx-auto">
@@ -230,9 +232,9 @@
                         <div class="relative flex items-center md:justify-end">
                             <div class="w-full md:w-1/2 md:pr-12">
                                 <div class="p-6 rounded-lg bg-primary shadow-md card">
-                                    <p class="font-bold text-accent font-serif text-lg">14:30</p>
-                                    <h4 class="font-serif text-xl mt-1">Powitanie i życzenia</h4>
-                                    <p class="text-sm font-light mt-1">Zaczynamy świętowanie w Restauracji Umami!</p>
+                                    <p class="font-bold text-accent font-display text-lg">14:30</p>
+                                    <h4 class="font-display text-xl mt-1">Powitanie i życzenia</h4>
+                                    <p class="text-sm font-serif mt-1">Zaczynamy świętowanie w Restauracji Umami!</p>
                                 </div>
                             </div>
                             <div
@@ -243,9 +245,9 @@
                         <div class="relative flex items-center md:justify-start">
                             <div class="w-full md:w-1/2 md:pl-12 ml-auto">
                                 <div class="p-6 rounded-lg bg-primary shadow-md card">
-                                    <p class="font-bold text-accent font-serif text-lg">14:50</p>
-                                    <h4 class="font-serif text-xl mt-1">Obiad Weselny</h4>
-                                    <p class="text-sm font-light mt-1">Przystawka, zupa i danie główne.</p>
+                                    <p class="font-bold text-accent font-display text-lg">14:50</p>
+                                    <h4 class="font-display text-xl mt-1">Uczta Weselna</h4>
+                                    <p class="text-sm font-serif mt-1">Przystawka, zupa i danie główne.</p>
                                 </div>
                             </div>
                             <div
@@ -256,9 +258,9 @@
                         <div class="relative flex items-center md:justify-end">
                             <div class="w-full md:w-1/2 md:pr-12">
                                 <div class="p-6 rounded-lg bg-primary shadow-md card">
-                                    <p class="font-bold text-accent font-serif text-lg">16:15</p>
-                                    <h4 class="font-serif text-xl mt-1">Pierwszy Taniec</h4>
-                                    <p class="text-sm font-light mt-1">Po deserze zapraszamy na parkiet!</p>
+                                    <p class="font-bold text-accent font-display text-lg">16:15</p>
+                                    <h4 class="font-display text-xl mt-1">Pierwszy Taniec</h4>
+                                    <p class="text-sm font-serif mt-1">Po deserze zapraszamy na parkiet!</p>
                                 </div>
                             </div>
                             <div
@@ -269,9 +271,9 @@
                         <div class="relative flex items-center md:justify-start">
                             <div class="w-full md:w-1/2 md:pl-12 ml-auto">
                                 <div class="p-6 rounded-lg bg-primary shadow-md card">
-                                    <p class="font-bold text-accent font-serif text-lg">16:45</p>
-                                    <h4 class="font-serif text-xl mt-1">Tort Weselny</h4>
-                                    <p class="text-sm font-light mt-1">Najsłodszy moment wieczoru.</p>
+                                    <p class="font-bold text-accent font-display text-lg">16:45</p>
+                                    <h4 class="font-display text-xl mt-1">Tort Weselny</h4>
+                                    <p class="text-sm font-serif mt-1">Najsłodszy moment wieczoru.</p>
                                 </div>
                             </div>
                             <div
@@ -282,9 +284,9 @@
                         <div class="relative flex items-center md:justify-end">
                             <div class="w-full md:w-1/2 md:pr-12">
                                 <div class="p-6 rounded-lg bg-primary shadow-md card">
-                                    <p class="font-bold text-accent font-serif text-lg">18:00, 20:00, 23:00, 01:00</p>
-                                    <h4 class="font-serif text-xl mt-1">Kolacje i Bufety</h4>
-                                    <p class="text-sm font-light mt-1">Regularnie uzupełniamy energię do tańca!</p>
+                                    <p class="font-bold text-accent font-display text-lg">18:00, 20:00, 23:00, 01:00</p>
+                                    <h4 class="font-display text-xl mt-1">Kolacje i Bufety</h4>
+                                    <p class="text-sm font-serif mt-1">Regularnie uzupełniamy energię do tańca!</p>
                                 </div>
                             </div>
                             <div
@@ -295,9 +297,9 @@
                         <div class="relative flex items-center md:justify-start">
                             <div class="w-full md:w-1/2 md:pl-12 ml-auto">
                                 <div class="p-6 rounded-lg bg-primary shadow-md card">
-                                    <p class="font-bold text-accent font-serif text-lg">22:00</p>
-                                    <h4 class="font-serif text-xl mt-1">Dwie Strefy Zabawy</h4>
-                                    <p class="text-sm font-light mt-1">Taniec w sali, rozmowy i chill w ogrodzie.</p>
+                                    <p class="font-bold text-accent font-display text-lg">22:00</p>
+                                    <h4 class="font-display text-xl mt-1">Dwie Strefy Zabawy</h4>
+                                    <p class="text-sm font-serif mt-1">Taniec w sali, rozmowy i chill w ogrodzie.</p>
                                 </div>
                             </div>
                             <div
@@ -313,17 +315,14 @@
         <section id="info" class="py-20 md:py-32 bg-primary">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-serif">Informacje Praktyczne</h2>
-                    <p class="mt-4 max-w-2xl mx-auto text-lg font-light">Chcemy, aby ten dzień był dla Was jak
-                        najbardziej komfortowy. Zebraliśmy tu wszystkie kluczowe informacje organizacyjne. Kliknij na
-                        interesujący Cię temat, aby dowiedzieć się więcej.</p>
+                    <h2 class="text-4xl md:text-5xl font-display">Pytania i odpowiedzi (zanim je zadacie!) ;)</h2>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     <div class="info-card card p-6 rounded-lg cursor-pointer">
-                        <h3 class="text-xl font-serif flex items-center">
-                            <span class="text-3xl mr-4 text-accent">🚗</span> Transport i Parking
+                        <h3 class="text-xl font-display flex items-center">
+                            <span class="text-3xl mr-4 text-accent">☙</span> Transport i Parking
                         </h3>
-                        <div class="info-content hidden mt-4 text-sm font-light space-y-2">
+                        <div class="info-content hidden mt-4 text-sm font-serif space-y-2">
                             <p>Zapewniamy transport autokarem spod kościoła do restauracji. Po weselu również odwieziemy
                                 Was bezpiecznie do domów na terenie Śląska.</p>
                             <p>Dla zmotoryzowanych gości dostępne są bezpłatne parkingi zarówno przy kościele, jak i
@@ -331,59 +330,54 @@
                         </div>
                     </div>
                     <div class="info-card card p-6 rounded-lg cursor-pointer">
-                        <h3 class="text-xl font-serif flex items-center">
-                            <span class="text-3xl mr-4 text-accent">👔</span> Dress Code
+                        <h3 class="text-xl font-display flex items-center">
+                            <span class="text-3xl mr-4 text-accent">⚜️</span> Dress Code
                         </h3>
-                        <div class="info-content hidden mt-4 text-sm font-light space-y-2">
-                            <p>Najważniejszy jest Wasz komfort! Czujcie się pięknie i swobodnie. Mamy tylko dwie małe
-                                prośby:</p>
-                            <p><strong>Panowie:</strong> Prosimy o wybór krawatów. Muszka w tym dniu zarezerwowana jest
-                                dla Pana Młodego.</p>
-                            <p><strong>Panie:</strong> Zgodnie z tradycją, prosimy o unikanie kreacji w kolorze białym i
-                                czarnym.</p>
+                        <div class="info-content hidden mt-4 text-sm font-serif space-y-2">
+                            <p>Jak się ubrać? Elegancko, ale na luzie! Panowie, krawaty mile widziane (muszki zostawcie
+                                Panu Młodemu!). Panie, prosimy o ominięcie bieli i czerni – niech ten dzień będzie pełen
+                                kolorów!</p>
                         </div>
                     </div>
                     <div class="info-card card p-6 rounded-lg cursor-pointer">
-                        <h3 class="text-xl font-serif flex items-center">
-                            <span class="text-3xl mr-4 text-accent">🥑</span> Diety i Alergie
+                        <h3 class="text-xl font-display flex items-center">
+                            <span class="text-3xl mr-4 text-accent">🌿</span> Diety i Alergie
                         </h3>
-                        <div class="info-content hidden mt-4 text-sm font-light space-y-2">
+                        <div class="info-content hidden mt-4 text-sm font-serif space-y-2">
                             <p>Wasz komfort kulinarny jest dla nas bardzo ważny. Prosimy, poinformujcie nas o wszelkich
                                 alergiach lub specjalnych potrzebach dietetycznych podczas potwierdzania przybycia.</p>
                             <p>Możemy przygotować dania w opcji: wegańskiej, bezglutenowej oraz bezlaktozowej.</p>
                         </div>
                     </div>
                     <div class="info-card card p-6 rounded-lg cursor-pointer">
-                        <h3 class="text-xl font-serif flex items-center">
-                            <span class="text-3xl mr-4 text-accent">📱</span> Kontakt
+                        <h3 class="text-xl font-display flex items-center">
+                            <span class="text-3xl mr-4 text-accent">📜</span> Kontakt
                         </h3>
-                        <div class="info-content hidden mt-4 text-sm font-light space-y-2">
-                            <p>W dniu ślubu, w razie pilnych pytań, prosimy o kontakt z naszym świadkiem. Chcemy w pełni
-                                poświęcić ten czas Wam i sobie nawzajem.</p>
+                        <div class="info-content hidden mt-4 text-sm font-serif space-y-2">
+                            <p>Kto pyta, nie błądzi... ale w dniu ślubu pytajcie świadka! My pewnie będziemy mieć głowę
+                                w chmurach.</p>
                             <p><strong>Świadek:</strong> [Imię Świadka], tel: [Numer telefonu Świadka]</p>
                             <p><strong>Para Młoda:</strong> [Numer telefonu Pary Młodej] (tylko w sytuacjach awaryjnych)
                             </p>
                         </div>
                     </div>
                     <div class="info-card card p-6 rounded-lg cursor-pointer">
-                        <h3 class="text-xl font-serif flex items-center">
-                            <span class="text-3xl mr-4 text-accent">🛏️</span> Nocleg
+                        <h3 class="text-xl font-display flex items-center">
+                            <span class="text-3xl mr-4 text-accent">☗</span> Nocleg
                         </h3>
-                        <div class="info-content hidden mt-4 text-sm font-light space-y-2">
+                        <div class="info-content hidden mt-4 text-sm font-serif space-y-2">
                             <p>Nie przewidujemy zorganizowanego noclegu. Zamiast tego zapewniamy komfortowy transport
                                 powrotny dla wszystkich gości, który odwiezie Was do domów na terenie Śląska po
                                 zakończeniu wesela.</p>
                         </div>
                     </div>
                     <div class="info-card card p-6 rounded-lg cursor-pointer">
-                        <h3 class="text-xl font-serif flex items-center">
-                            <span class="text-3xl mr-4 text-accent">📷</span> Zdjęcia i Wspomnienia
+                        <h3 class="text-xl font-display flex items-center">
+                            <span class="text-3xl mr-4 text-accent">🖼️</span> Wspomnienia
                         </h3>
-                        <div class="info-content hidden mt-4 text-sm font-light space-y-2">
-                            <p>Pomóżcie nam stworzyć najpiękniejszą pamiątkę! Na sali weselnej znajdziecie kody QR do
-                                wspólnej galerii.</p>
-                            <p>Zachęcamy do dzielenia się Waszymi zdjęciami i filmikami. Wasza perspektywa jest dla nas
-                                bezcennym darem!</p>
+                        <div class="info-content hidden mt-4 text-sm font-serif space-y-2">
+                            <p>Zostańcie naszymi fotografami! Skanujcie kody QR na sali i wrzucajcie zdjęcia do wspólnej
+                                galerii. Cudownie byłoby zobaczyć ten dzień Waszymi oczami!</p>
                         </div>
                     </div>
                 </div>
@@ -393,10 +387,11 @@
     </main>
 
     <footer class="bg-secondary py-12">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="font-serif text-2xl text-accent">Nie możemy się doczekać, by świętować z Wami!</p>
-            <p class="mt-4 font-light">Z miłością,</p>
-            <p class="font-serif text-xl">Julianna i Paweł</p>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-accent">
+            <p class="font-display text-2xl">Najpierw najważniejsze słowa przed Bogiem, a potem zbierajcie siły, bo
+                szykujemy imprezę naszego życia.</p>
+            <p class="mt-4 font-serif">Z miłością,</p>
+            <p class="font-display text-xl">Julianna i Paweł</p>
         </div>
     </footer>
 
@@ -424,7 +419,7 @@
 
                 if (distance < 0) {
                     clearInterval(countdownFunction);
-                    document.getElementById("countdown").innerHTML = "<div class='text-center w-full font-serif text-2xl text-accent'>Ten dzień nadszedł!</div>";
+                    document.getElementById("countdown").innerHTML = "<div class='text-center w-full font-display text-2xl text-accent'>Ten dzień nadszedł!</div>";
                     return;
                 }
 

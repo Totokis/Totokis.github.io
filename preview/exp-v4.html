@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Exp V4: Immersive — Przewodnik Wędkarski PRO</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,7 +60,7 @@
     }
 
     /* ── TOPBAR ── */
-    .topbar { position: absolute; top: 0; left: 0; right: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; padding: 20px 20px 0; pointer-events: none; }
+    .topbar { position: absolute; top: 0; left: 0; right: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; padding: calc(16px + env(safe-area-inset-top)) 20px 0; pointer-events: none; }
     .topbar > * { pointer-events: all; }
     .logo img { height: 30px; width: auto; display: block; }
     .hamburger { width: 48px; height: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
@@ -75,7 +75,7 @@
       z-index: 10;
       background: #0A0A0A;
       border-radius: 28px 28px 0 0;
-      padding: 28px 24px 52px;
+      padding: 28px 24px calc(32px + env(safe-area-inset-bottom));
       will-change: transform;
     }
     .card-handle { width: 40px; height: 4px; background: rgba(232,228,223,0.2); border-radius: 2px; margin: 0 auto 24px; }

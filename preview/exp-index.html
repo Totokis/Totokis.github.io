@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eksploracje — Przewodnik Wędkarski PRO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Oswald:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; min-height: 100svh; background: #0A0A0A; color: #E8E4DF; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+    .page { max-width: 480px; margin: 0 auto; padding: 48px 24px 64px; }
+
+    .logo-wrap { margin-bottom: 40px; }
+    .logo-wrap img { height: 28px; width: auto; display: block; opacity: 0.7; }
+
+    .label { font-family: 'Oswald', sans-serif; font-weight: 300; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: #5A6878; margin-bottom: 12px; }
+    .title { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 30px; color: #E8E4DF; line-height: 1.2; margin-bottom: 8px; }
+    .subtitle { font-family: 'Playfair Display', serif; font-style: italic; font-size: 17px; color: rgba(232,228,223,0.5); margin-bottom: 40px; line-height: 1.4; }
+
+    .divider { width: 40px; height: 2px; background: #F57C20; margin-bottom: 36px; }
+
+    /* Cards grid */
+    .grid { display: flex; flex-direction: column; gap: 16px; }
+
+    .variant-card {
+      display: block;
+      text-decoration: none;
+      background: #111;
+      border: 1px solid rgba(232,228,223,0.08);
+      border-radius: 16px;
+      padding: 24px 22px;
+      transition: border-color .2s, background .2s;
+      -webkit-tap-highlight-color: transparent;
+      position: relative;
+      overflow: hidden;
+    }
+    .variant-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: #F57C20;
+      border-radius: 3px 0 0 3px;
+      opacity: 0;
+      transition: opacity .2s;
+    }
+    .variant-card:active { background: #161616; border-color: rgba(245,124,32,0.35); }
+    .variant-card:active::before { opacity: 1; }
+
+    .v-num { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #F57C20; margin-bottom: 6px; }
+    .v-name { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 22px; color: #E8E4DF; margin-bottom: 6px; }
+    .v-desc { font-family: 'Oswald', sans-serif; font-weight: 300; font-size: 14px; color: rgba(232,228,223,0.5); line-height: 1.5; letter-spacing: 0.03em; }
+    .v-arrow { position: absolute; right: 22px; top: 50%; transform: translateY(-50%); font-size: 20px; color: rgba(232,228,223,0.25); }
+
+    .back { margin-top: 44px; text-align: center; }
+    .back a { font-family: 'Oswald', sans-serif; font-weight: 300; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(232,228,223,0.3); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="logo-wrap">
+      <img src="img/logo.png" alt="Przewodnik Wędkarski PRO">
+    </div>
+
+    <p class="label">Warianty mobilne</p>
+    <h1 class="title">Eksploracje</h1>
+    <p class="subtitle">Zdjęcie góra, ciemny tekst dół</p>
+    <div class="divider"></div>
+
+    <div class="grid">
+      <a href="exp-v1.html" class="variant-card">
+        <p class="v-num">Wariant 01</p>
+        <p class="v-name">Gradient Reveal</p>
+        <p class="v-desc">Mocny gradient — tekst wyrasta ze zdjęcia. Blur + scale przy scrollu.</p>
+        <span class="v-arrow">→</span>
+      </a>
+
+      <a href="exp-v2.html" class="variant-card">
+        <p class="v-num">Wariant 02</p>
+        <p class="v-name">Floating Card</p>
+        <p class="v-desc">Ciemna karta nachodzi na dolne 15% zdjęcia. Parallax przy scrollu.</p>
+        <span class="v-arrow">→</span>
+      </a>
+
+      <a href="exp-v3.html" class="variant-card">
+        <p class="v-num">Wariant 03</p>
+        <p class="v-name">Cinematic Strip</p>
+        <p class="v-desc">Zdjęcie w proporcji 16:9 jak kadr kinowy. Więcej poziomego kadru.</p>
+        <span class="v-arrow">→</span>
+      </a>
+
+      <a href="exp-v4.html" class="variant-card">
+        <p class="v-num">Wariant 04</p>
+        <p class="v-name">Immersive</p>
+        <p class="v-desc">Zdjęcie 65% jako tło z parallaxem. Karta wysuwa się przy scrollu.</p>
+        <span class="v-arrow">→</span>
+      </a>
+    </div>
+
+    <div class="back">
+      <a href="index.html">← Inne warianty</a>
+    </div>
+  </div>
+</body>
+</html>

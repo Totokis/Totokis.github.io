@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exp V3: Cinematic Strip — Przewodnik Wędkarski PRO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Oswald:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; background: #0A0A0A; color: #E8E4DF; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+    /* ── MENU ── */
+    .menu-overlay { position: fixed; inset: 0; z-index: 90; background: #0A0A0A; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 60px 36px; opacity: 0; pointer-events: none; transition: opacity .35s; }
+    .menu-overlay.open { opacity: 1; pointer-events: all; }
+    .menu-overlay nav { display: flex; flex-direction: column; gap: 4px; width: 100%; }
+    .menu-overlay nav a { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 36px; color: #E8E4DF; text-decoration: none; padding: 12px 0; border-bottom: 1px solid rgba(232,228,223,0.08); }
+    .menu-overlay nav a:last-child { border-bottom: none; }
+    .menu-overlay nav a:active { color: #F57C20; }
+    .menu-nav-label { font-family: 'Oswald', sans-serif; font-weight: 300; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: #5A6878; margin-bottom: 32px; }
+
+    /* ── TOP BAR (black strip above photo) ── */
+    .topbar {
+      position: sticky; top: 0; z-index: 40;
+      background: #0A0A0A;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(232,228,223,0.06);
+    }
+    .logo img { height: 28px; width: auto; display: block; }
+    .hamburger { width: 48px; height: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+    .hamburger span { display: block; width: 26px; height: 2px; background: #E8E4DF; border-radius: 2px; transition: transform .3s, opacity .3s; transform-origin: center; }
+    .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* ── CINEMATIC STRIP ── */
+    .cinema-wrap {
+      position: relative;
+      width: 100%;
+      /* 16:9 ratio, capped at 260px */
+      height: 56vw;
+      max-height: 260px;
+      overflow: hidden;
+      cursor: zoom-in;
+    }
+    /* Thin letterbox bars for cinema feel */
+    .cinema-wrap::before,
+    .cinema-wrap::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0;
+      height: 6px;
+      background: #0A0A0A;
+      z-index: 2;
+    }
+    .cinema-wrap::before { top: 0; }
+    .cinema-wrap::after  { bottom: 0; }
+
+    .cinema-img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 35%;
+      display: block;
+      will-change: transform, filter;
+      transform-origin: center center;
+    }
+
+    /* ── CONTENT ── */
+    .content { background: #0A0A0A; padding: 28px 24px 48px; }
+
+    .eyebrow { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 28px; color: #E8E4DF; line-height: 1.2; margin-bottom: 4px; }
+    .sub-orange { font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; color: #F57C20; margin-bottom: 18px; }
+    .big-title { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 48px; text-transform: uppercase; letter-spacing: 0.04em; color: #E8E4DF; line-height: 1.0; margin-bottom: 8px; }
+    .sub2 { font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; color: #F57C20; margin-bottom: 28px; }
+    .divider { width: 48px; height: 2px; background: #F57C20; margin-bottom: 28px; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+    .tag { font-family: 'Oswald', sans-serif; font-weight: 400; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(232,228,223,0.7); background: rgba(232,228,223,0.07); border: 1px solid rgba(232,228,223,0.13); padding: 7px 14px; border-radius: 100px; }
+
+    .btn-cta { display: flex; align-items: center; justify-content: center; width: 100%; min-height: 62px; background: #F57C20; color: #0A0A0A; font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 17px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; border-radius: 12px; -webkit-tap-highlight-color: transparent; margin-bottom: 20px; }
+    .btn-cta:active { opacity: .85; }
+    .back-link { display: block; text-align: center; padding: 4px 0; font-family: 'Oswald', sans-serif; font-weight: 300; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(232,228,223,0.35); text-decoration: none; }
+
+    /* ── LIGHTBOX ── */
+    .lightbox { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(0,0,0,0.96); align-items: center; justify-content: center; }
+    .lightbox.active { display: flex; }
+    .lightbox img { max-width: 100%; max-height: 100vh; object-fit: contain; }
+    .lightbox-close { position: absolute; top: 16px; right: 16px; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 22px; color: #E8E4DF; cursor: pointer; background: rgba(255,255,255,0.12); border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); }
+  </style>
+</head>
+<body>
+
+  <div class="menu-overlay" id="menuOverlay">
+    <p class="menu-nav-label">Nawigacja</p>
+    <nav>
+      <a href="exp-index.html">← Eksploracje</a>
+      <a href="#">O nas</a>
+      <a href="#">Galeria</a>
+      <a href="#">Oferta</a>
+      <a href="#">Kontakt</a>
+    </nav>
+  </div>
+
+  <div class="lightbox" id="lightbox" onclick="if(event.target===this)closeLightbox()">
+    <div class="lightbox-close" onclick="closeLightbox()">✕</div>
+    <img src="img/home.jpg" alt="Wędkarz o świcie">
+  </div>
+
+  <div class="topbar">
+    <div class="logo"><img src="img/logo.png" alt="Przewodnik Wędkarski PRO"></div>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+
+  <div class="cinema-wrap" id="cinemaWrap" onclick="openLightbox()">
+    <img src="img/home.jpg" alt="Wędkarz o świcie" class="cinema-img" id="cinemaImg">
+  </div>
+
+  <div class="content">
+    <p class="eyebrow">Wyprawy z przewodnikiem</p>
+    <p class="sub-orange">Rzeczne sumy</p>
+    <h1 class="big-title">BELLY CAMP</h1>
+    <p class="sub2">Cel — szczupak</p>
+    <div class="divider"></div>
+    <div class="tags">
+      <span class="tag">Szczupak</span>
+      <span class="tag">Sandacz</span>
+      <span class="tag">Sum</span>
+      <span class="tag">Czorsztyn</span>
+      <span class="tag">Belly Camp</span>
+    </div>
+    <a href="#" class="btn-cta">Sprawdź ofertę</a>
+    <a href="exp-index.html" class="back-link">← Wróć do eksploracji</a>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      var o = document.getElementById('menuOverlay'), b = document.getElementById('hamburger');
+      o.classList.toggle('open'); b.classList.toggle('active');
+      document.body.style.overflow = o.classList.contains('open') ? 'hidden' : '';
+    }
+    document.querySelectorAll('.menu-overlay nav a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        document.getElementById('menuOverlay').classList.remove('open');
+        document.getElementById('hamburger').classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+
+    function openLightbox() {
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Scroll: blur + scale on cinema strip
+    var cinemaImg  = document.getElementById('cinemaImg');
+    var cinemaWrap = document.getElementById('cinemaWrap');
+    window.addEventListener('scroll', function() {
+      var h = cinemaWrap.offsetHeight;
+      var s = Math.max(0, Math.min(window.scrollY / (h * 1.5), 1));
+      cinemaImg.style.filter    = 'brightness(0.88) saturate(1.1) blur(' + (s * 8).toFixed(2) + 'px)';
+      cinemaImg.style.transform = 'scale(' + (1 + s * 0.08).toFixed(4) + ')';
+    }, { passive: true });
+  </script>
+</body>
+</html>

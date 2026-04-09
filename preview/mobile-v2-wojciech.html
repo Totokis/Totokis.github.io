@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wojciech Krzyszczyk — Wariant 2 — Przewodnik Wędkarski PRO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Oswald:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; background: #0A0A0A; color: #E8E4DF; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+    /* ── MENU ─── */
+    .menu-overlay { position: fixed; inset: 0; z-index: 90; background: #0A0A0A; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 60px 36px; opacity: 0; pointer-events: none; transition: opacity .35s; }
+    .menu-overlay.open { opacity: 1; pointer-events: all; }
+    .menu-overlay nav { display: flex; flex-direction: column; gap: 4px; width: 100%; }
+    .menu-overlay nav a { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 36px; color: #E8E4DF; text-decoration: none; padding: 12px 0; border-bottom: 1px solid rgba(232,228,223,0.08); }
+    .menu-overlay nav a:last-child { border-bottom: none; }
+    .menu-overlay nav a:active { color: #F57C20; }
+    .menu-label { font-family: 'Oswald', sans-serif; font-weight: 300; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: #5A6878; margin-bottom: 32px; }
+
+    /* ── PHOTO ─── */
+    .photo-wrap { position: relative; width: 100%; height: 42svh; min-height: 220px; overflow: hidden; }
+    .photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; filter: brightness(0.75) saturate(1.05); display: block; }
+    .photo-gradient {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(10,10,10,0.48) 0%, transparent 32%, rgba(13,13,13,0.72) 72%, #0d0d0d 100%);
+      pointer-events: none;
+    }
+    .topbar { position: absolute; top: 0; left: 0; right: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; padding: 20px 22px 0; }
+    .logo img { height: 30px; width: auto; display: block; }
+    .hamburger { width: 48px; height: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+    .hamburger span { display: block; width: 26px; height: 2px; background: #E8E4DF; border-radius: 2px; transition: transform .3s, opacity .3s; transform-origin: center; }
+    .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* ── DARK CARD ─── */
+    .card { background: #0d0d0d; padding: 24px 22px 28px; }
+    .guide-eyebrow { font-family: 'Oswald', sans-serif; font-weight: 300; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: #5A6878; margin-bottom: 5px; display: block; }
+    .guide-name { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 32px; color: #E8E4DF; letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 5px; }
+    .guide-title { font-family: 'Playfair Display', serif; font-weight: 400; font-style: italic; font-size: 18px; color: #F57C20; margin-bottom: 18px; display: block; }
+
+    /* ── LIST ─── */
+    .offer-list { border-top: 1px solid rgba(232,228,223,0.12); margin-bottom: 20px; }
+    .offer-item { display: flex; align-items: center; gap: 14px; min-height: 54px; border-bottom: 1px solid rgba(232,228,223,0.08); text-decoration: none; color: inherit; -webkit-tap-highlight-color: transparent; }
+    .offer-item:active .offer-name { color: #F57C20; }
+    .offer-num { font-family: 'Oswald', sans-serif; font-weight: 300; font-size: 12px; letter-spacing: 0.14em; color: #F57C20; min-width: 26px; flex-shrink: 0; }
+    .offer-name { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 18px; color: #E8E4DF; flex: 1; }
+    .offer-arrow { font-size: 17px; color: #F57C20; opacity: 0.65; flex-shrink: 0; }
+
+    .footer-row { display: flex; align-items: center; justify-content: space-between; padding-top: 4px; }
+    .back-link { font-family: 'Oswald', sans-serif; font-weight: 300; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(232,228,223,0.45); text-decoration: none; padding: 12px 0; }
+    .back-link-sm { font-family: 'Oswald', sans-serif; font-weight: 300; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(232,228,223,0.25); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <div class="menu-overlay" id="menuOverlay">
+    <p class="menu-label">Nawigacja</p>
+    <nav>
+      <a href="mobile-v2.html">Start</a>
+      <a href="#">O nas</a>
+      <a href="#">Galeria</a>
+      <a href="mobile-v2-oferta.html">Oferta</a>
+      <a href="#">Kontakt</a>
+    </nav>
+  </div>
+
+  <div class="photo-wrap">
+    <img src="img/wojciech.jpg" alt="Wojciech Krzyszczyk">
+    <div class="photo-gradient"></div>
+    <div class="topbar">
+      <div class="logo"><a href="mobile-v2.html"><img src="img/logo.png" alt="Przewodnik Wędkarski PRO"></a></div>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="guide-eyebrow">Przewodnik wędkarski</span>
+    <h1 class="guide-name">Wojciech<br>Krzyszczyk</h1>
+    <span class="guide-title">Specjalista od drapieżników</span>
+
+    <div class="offer-list">
+      <a href="#" class="offer-item"><span class="offer-num">01</span><span class="offer-name">Szczupak</span><span class="offer-arrow">&#8594;</span></a>
+      <a href="#" class="offer-item"><span class="offer-num">02</span><span class="offer-name">Boleń</span><span class="offer-arrow">&#8594;</span></a>
+      <a href="#" class="offer-item"><span class="offer-num">03</span><span class="offer-name">Sandacz</span><span class="offer-arrow">&#8594;</span></a>
+      <a href="#" class="offer-item"><span class="offer-num">04</span><span class="offer-name">Sum</span><span class="offer-arrow">&#8594;</span></a>
+      <a href="#" class="offer-item"><span class="offer-num">05</span><span class="offer-name">Brzana</span><span class="offer-arrow">&#8594;</span></a>
+      <a href="#" class="offer-item"><span class="offer-num">06</span><span class="offer-name">Oko&#324;</span><span class="offer-arrow">&#8594;</span></a>
+      <a href="#" class="offer-item"><span class="offer-num">07</span><span class="offer-name">Pstr&#261;g Potokowy</span><span class="offer-arrow">&#8594;</span></a>
+      <a href="#" class="offer-item"><span class="offer-num">08</span><span class="offer-name">Kle&#324;</span><span class="offer-arrow">&#8594;</span></a>
+    </div>
+
+    <div class="footer-row">
+      <a href="mobile-v2-oferta.html" class="back-link">&#8592; Wróć do oferty</a>
+      <a href="mobile-wybor.html" class="back-link-sm">Wybór wariantów</a>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      var o = document.getElementById('menuOverlay'), b = document.getElementById('hamburger');
+      o.classList.toggle('open'); b.classList.toggle('active');
+      document.body.style.overflow = o.classList.contains('open') ? 'hidden' : '';
+    }
+    document.querySelectorAll('.menu-overlay nav a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        document.getElementById('menuOverlay').classList.remove('open');
+        document.getElementById('hamburger').classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+</body>
+</html>

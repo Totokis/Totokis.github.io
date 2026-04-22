@@ -2,82 +2,98 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Podgląd mobilny — Przewodnik Wędkarski PRO</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Preview — Przewodnik Wędkarski PRO</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Oswald:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@0,700&family=Oswald:wght@300;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { width: 100%; min-height: 100%; background: #0A0A0A; color: #E8E4DF; -webkit-font-smoothing: antialiased; }
-    body { display: flex; flex-direction: column; align-items: center; padding: 52px 22px 44px; }
+    html, body {
+      width: 100%; min-height: 100svh;
+      background: #0A0A0A; color: #E8E4DF;
+      -webkit-font-smoothing: antialiased;
+    }
 
-    .logo { margin-bottom: 44px; }
-    .logo img { height: 44px; width: auto; display: block; }
+    .page {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: calc(48px + env(safe-area-inset-top)) 24px calc(48px + env(safe-area-inset-bottom));
+      display: flex;
+      flex-direction: column;
+      min-height: 100svh;
+    }
 
-    .headline { font-family: 'Oswald', sans-serif; font-weight: 300; font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: #5A6878; text-align: center; margin-bottom: 10px; }
-    .title { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 30px; color: #E8E4DF; text-align: center; line-height: 1.18; margin-bottom: 48px; }
+    .logo { margin-bottom: 48px; }
+    .logo img { height: 28px; width: auto; opacity: 0.7; }
 
-    .cards { width: 100%; max-width: 440px; display: flex; flex-direction: column; gap: 14px; }
+    .heading { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 26px; color: #E8E4DF; margin-bottom: 6px; }
+    .sub { font-family: 'Oswald', sans-serif; font-weight: 300; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: #5A6878; margin-bottom: 40px; }
+
+    .cards { display: flex; flex-direction: column; gap: 14px; }
 
     .card {
-      display: flex; align-items: center; justify-content: space-between;
-      min-height: 88px; padding: 0 24px;
-      border: 1px solid rgba(232,228,223,0.13);
-      background: rgba(232,228,223,0.04);
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      background: #111;
+      border: 1px solid rgba(232,228,223,0.08);
+      border-left: 3px solid #F57C20;
       border-radius: 14px;
-      text-decoration: none; color: #E8E4DF;
+      padding: 24px 22px;
+      gap: 18px;
+      min-height: 80px;
       -webkit-tap-highlight-color: transparent;
-      transition: background .18s, border-color .18s;
     }
-    .card:active { background: rgba(245,124,32,0.10); border-color: rgba(245,124,32,0.35); }
+    .card:active { background: #1a1a1a; }
 
-    .card-left { display: flex; flex-direction: column; gap: 4px; }
-    .card-name { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 24px; color: #E8E4DF; line-height: 1.1; }
-    .card-desc { font-family: 'Oswald', sans-serif; font-weight: 300; font-size: 13px; letter-spacing: 0.06em; color: #5A6878; }
-    .card-arrow { font-size: 22px; color: #F57C20; opacity: 0.75; flex-shrink: 0; margin-left: 12px; }
-
-    .footer-note { margin-top: 44px; font-family: 'Oswald', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #5A6878; opacity: 0.35; text-align: center; }
+    .card-num {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      color: #F57C20;
+      min-width: 20px;
+    }
+    .card-title {
+      flex: 1;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      letter-spacing: 0.04em;
+      color: #E8E4DF;
+    }
+    .card-arrow { font-size: 20px; color: rgba(232,228,223,0.3); }
   </style>
 </head>
 <body>
+  <div class="page">
+    <div class="logo">
+      <img src="img/logo.png" alt="Przewodnik Wędkarski PRO">
+    </div>
 
-  <div class="logo">
-    <img src="img/logo.png" alt="Przewodnik Wędkarski PRO">
+    <h1 class="heading">Przewodnik Wędkarski</h1>
+    <p class="sub">Wybierz stronę</p>
+
+    <div class="cards">
+      <a href="exp-v4.html" class="card">
+        <span class="card-num">01</span>
+        <span class="card-title">Strona główna</span>
+        <span class="card-arrow">→</span>
+      </a>
+
+      <a href="exp-v4-oferta.html" class="card">
+        <span class="card-num">02</span>
+        <span class="card-title">Oferta</span>
+        <span class="card-arrow">→</span>
+      </a>
+
+      <a href="exp-v4-wojciech.html" class="card">
+        <span class="card-num">03</span>
+        <span class="card-title">Wojciech Krzyszczyk</span>
+        <span class="card-arrow">→</span>
+      </a>
+    </div>
   </div>
-
-  <p class="headline">Wersja mobilna — podgląd</p>
-  <h1 class="title">Wybierz stronę</h1>
-
-  <div class="cards">
-
-    <a href="mobile-v2.html" class="card">
-      <div class="card-left">
-        <span class="card-name">Strona główna</span>
-        <span class="card-desc">Hero ze zdjęciem i CTA</span>
-      </div>
-      <span class="card-arrow">&#8594;</span>
-    </a>
-
-    <a href="mobile-v2-oferta.html" class="card">
-      <div class="card-left">
-        <span class="card-name">Oferta</span>
-        <span class="card-desc">Lista wypraw i usług</span>
-      </div>
-      <span class="card-arrow">&#8594;</span>
-    </a>
-
-    <a href="mobile-v2-wojciech.html" class="card">
-      <div class="card-left">
-        <span class="card-name">Wojciech Krzyszczyk</span>
-        <span class="card-desc">Przewodnik — lista gatunków</span>
-      </div>
-      <span class="card-arrow">&#8594;</span>
-    </a>
-
-  </div>
-
-  <p class="footer-note">Przewodnik Wędkarski PRO &mdash; Prototyp mobilny</p>
-
 </body>
 </html>
